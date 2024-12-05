@@ -1,12 +1,669 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+  <meta charset="UTF-8">
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Kosugi');
+
+    body {
+      font-family: 'Kosugi', sans-serif;
+      font-weight: bold;
+    }
+  </style>
 </head>
+
 <body>
-  Hello World!
+  <div id="app">
+    <v-app id="inspire">
+      <v-app-bar app>
+        <v-app-bar-title style="width: 100%;">
+          <div style="width: 100%;">Pokedle</div>
+        </v-app-bar-title>
+      </v-app-bar>
+
+      <v-main>
+        <v-form v-model="valid">
+          <v-container style="display: flex;">
+            <v-col cols="12" md="5">
+              <v-row row="6" style="height: 100px;">
+                <v-card elevation="16" id="panel0" text="..." style="width: 100px; height: 100%; margin-right: auto;">
+                  <div style="font-size: 75px; text-align: center; vertical-align: middle;">{{str[0]}}</div>
+                </v-card>
+                <v-card elevation="16" id="panel1" text="..." style="width: 100px; height: 100%; margin-right: auto;">
+                  <div style="font-size: 75px; text-align: center; vertical-align: middle;">{{str[1]}}</div>
+                </v-card>
+                <v-card elevation="16" id="panel2" text="..." style="width: 100px; height: 100%; margin-right: auto;">
+                  <div style="font-size: 75px; text-align: center; vertical-align: middle;">{{str[2]}}</div>
+                </v-card>
+                <v-card elevation="16" id="panel3" text="..." style="width: 100px; height: 100%; margin-right: auto;">
+                  <div style="font-size: 75px; text-align: center; vertical-align: middle;">{{str[3]}}</div>
+                </v-card>
+                <v-card elevation="16" id="panel4" text="..." style="width: 100px; height: 100%; margin-right: auto;">
+                  <div style="font-size: 75px; text-align: center; vertical-align: middle;">{{str[4]}}</div>
+                </v-card>
+              </v-row>
+            </v-col>
+            <v-col cols="12" md="5" style="margin-left: auto;">
+              <v-row row="6" style="height: 100px;">
+                <v-card elevation="16" id="panel25" text="..." style="width: 100px; height: 100%; margin-right: auto;">
+                  <div style="font-size: 75px; text-align: center; vertical-align: middle;">{{str[25]}}</div>
+                </v-card>
+                <v-card elevation="16" id="panel26" text="..." style="width: 100px; height: 100%; margin-right: auto;">
+                  <div style="font-size: 75px; text-align: center; vertical-align: middle;">{{str[26]}}</div>
+                </v-card>
+                <v-card elevation="16" id="panel27" text="..." style="width: 100px; height: 100%; margin-right: auto;">
+                  <div style="font-size: 75px; text-align: center; vertical-align: middle;">{{str[27]}}</div>
+                </v-card>
+                <v-card elevation="16" id="panel28" text="..." style="width: 100px; height: 100%; margin-right: auto;">
+                  <div style="font-size: 75px; text-align: center; vertical-align: middle;">{{str[28]}}</div>
+                </v-card>
+                <v-card elevation="16" id="panel29" text="..." style="width: 100px; height: 100%; margin-right: auto;">
+                  <div style="font-size: 75px; text-align: center; vertical-align: middle;">{{str[29]}}</div>
+                </v-card>
+              </v-row>
+            </v-col>
+          </v-container>
+          <v-container style="display: flex;">
+            <v-col cols="12" md="5">
+              <v-row row="6" style="height: 100px;">
+                <v-card elevation="16" id="panel5" text="..." style="width: 100px; height: 100%; margin-right: auto;">
+                  <div style="font-size: 75px; text-align: center; vertical-align: middle;">{{str[5]}}</div>
+                </v-card>
+                <v-card elevation="16" id="panel6" text="..." style="width: 100px; height: 100%; margin-right: auto;">
+                  <div style="font-size: 75px; text-align: center; vertical-align: middle;">{{str[6]}}</div>
+                </v-card>
+                <v-card elevation="16" id="panel7" text="..." style="width: 100px; height: 100%; margin-right: auto;">
+                  <div style="font-size: 75px; text-align: center; vertical-align: middle;">{{str[7]}}</div>
+                </v-card>
+                <v-card elevation="16" id="panel8" text="..." style="width: 100px; height: 100%; margin-right: auto;">
+                  <div style="font-size: 75px; text-align: center; vertical-align: middle;">{{str[8]}}</div>
+                </v-card>
+                <v-card elevation="16" id="panel9" text="..." style="width: 100px; height: 100%; margin-right: auto;">
+                  <div style="font-size: 75px; text-align: center; vertical-align: middle;">{{str[9]}}</div>
+                </v-card>
+              </v-row>
+            </v-col>
+            <v-col cols="12" md="5" style="margin-left: auto;">
+              <v-row row="6" style="height: 100px;">
+                <v-card elevation="16" id="panel30" text="..." style="width: 100px; height: 100%; margin-right: auto;">
+                  <div style="font-size: 75px; text-align: center; vertical-align: middle;">{{str[30]}}</div>
+                </v-card>
+                <v-card elevation="16" id="panel31" text="..." style="width: 100px; height: 100%; margin-right: auto;">
+                  <div style="font-size: 75px; text-align: center; vertical-align: middle;">{{str[31]}}</div>
+                </v-card>
+                <v-card elevation="16" id="panel32" text="..." style="width: 100px; height: 100%; margin-right: auto;">
+                  <div style="font-size: 75px; text-align: center; vertical-align: middle;">{{str[32]}}</div>
+                </v-card>
+                <v-card elevation="16" id="panel33" text="..." style="width: 100px; height: 100%; margin-right: auto;">
+                  <div style="font-size: 75px; text-align: center; vertical-align: middle;">{{str[33]}}</div>
+                </v-card>
+                <v-card elevation="16" id="panel34" text="..." style="width: 100px; height: 100%; margin-right: auto;">
+                  <div style="font-size: 75px; text-align: center; vertical-align: middle;">{{str[34]}}</div>
+                </v-card>
+              </v-row>
+            </v-col>
+          </v-container>
+          <v-container style="display: flex;">
+            <v-col cols="12" md="5">
+              <v-row row="6" style="height: 100px;">
+                <v-card elevation="16" id="panel10" text="..." style="width: 100px; height: 100%; margin-right: auto;">
+                  <div style="font-size: 75px; text-align: center; vertical-align: middle;">{{str[10]}}</div>
+                </v-card>
+                <v-card elevation="16" id="panel11" text="..." style="width: 100px; height: 100%; margin-right: auto;">
+                  <div style="font-size: 75px; text-align: center; vertical-align: middle;">{{str[11]}}</div>
+                </v-card>
+                <v-card elevation="16" id="panel12" text="..." style="width: 100px; height: 100%; margin-right: auto;">
+                  <div style="font-size: 75px; text-align: center; vertical-align: middle;">{{str[12]}}</div>
+                </v-card>
+                <v-card elevation="16" id="panel13" text="..." style="width: 100px; height: 100%; margin-right: auto;">
+                  <div style="font-size: 75px; text-align: center; vertical-align: middle;">{{str[13]}}</div>
+                </v-card>
+                <v-card elevation="16" id="panel14" text="..." style="width: 100px; height: 100%; margin-right: auto;">
+                  <div style="font-size: 75px; text-align: center; vertical-align: middle;">{{str[14]}}</div>
+                </v-card>
+              </v-row>
+            </v-col>
+            <v-col cols="12" md="5" style="margin-left: auto;">
+              <v-row row="6" style="height: 100px;">
+                <v-card elevation="16" id="panel35" text="..." style="width: 100px; height: 100%; margin-right: auto;">
+                  <div style="font-size: 75px; text-align: center; vertical-align: middle;">{{str[35]}}</div>
+                </v-card>
+                <v-card elevation="16" id="panel36" text="..." style="width: 100px; height: 100%; margin-right: auto;">
+                  <div style="font-size: 75px; text-align: center; vertical-align: middle;">{{str[36]}}</div>
+                </v-card>
+                <v-card elevation="16" id="panel37" text="..." style="width: 100px; height: 100%; margin-right: auto;">
+                  <div style="font-size: 75px; text-align: center; vertical-align: middle;">{{str[37]}}</div>
+                </v-card>
+                <v-card elevation="16" id="panel38" text="..." style="width: 100px; height: 100%; margin-right: auto;">
+                  <div style="font-size: 75px; text-align: center; vertical-align: middle;">{{str[38]}}</div>
+                </v-card>
+                <v-card elevation="16" id="panel39" text="..." style="width: 100px; height: 100%; margin-right: auto;">
+                  <div style="font-size: 75px; text-align: center; vertical-align: middle;">{{str[39]}}</div>
+                </v-card>
+              </v-row>
+            </v-col>
+          </v-container>
+          <v-container style="display: flex;">
+            <v-col cols="12" md="5">
+              <v-row row="6" style="height: 100px;">
+                <v-card elevation="16" id="panel15" text="..." style="width: 100px; height: 100%; margin-right: auto;">
+                  <div style="font-size: 75px; text-align: center; vertical-align: middle;">{{str[15]}}</div>
+                </v-card>
+                <v-card elevation="16" id="panel16" text="..." style="width: 100px; height: 100%; margin-right: auto;">
+                  <div style="font-size: 75px; text-align: center; vertical-align: middle;">{{str[16]}}</div>
+                </v-card>
+                <v-card elevation="16" id="panel17" text="..." style="width: 100px; height: 100%; margin-right: auto;">
+                  <div style="font-size: 75px; text-align: center; vertical-align: middle;">{{str[17]}}</div>
+                </v-card>
+                <v-card elevation="16" id="panel18" text="..." style="width: 100px; height: 100%; margin-right: auto;">
+                  <div style="font-size: 75px; text-align: center; vertical-align: middle;">{{str[18]}}</div>
+                </v-card>
+                <v-card elevation="16" id="panel19" text="..." style="width: 100px; height: 100%; margin-right: auto;">
+                  <div style="font-size: 75px; text-align: center; vertical-align: middle;">{{str[19]}}</div>
+                </v-card>
+              </v-row>
+            </v-col>
+            <v-col cols="12" md="5" style="margin-left: auto;">
+              <v-row row="6" style="height: 100px;">
+                <v-card elevation="16" id="panel40" text="..." style="width: 100px; height: 100%; margin-right: auto;">
+                  <div style="font-size: 75px; text-align: center; vertical-align: middle;">{{str[40]}}</div>
+                </v-card>
+                <v-card elevation="16" id="panel41" text="..." style="width: 100px; height: 100%; margin-right: auto;">
+                  <div style="font-size: 75px; text-align: center; vertical-align: middle;">{{str[41]}}</div>
+                </v-card>
+                <v-card elevation="16" id="panel42" text="..." style="width: 100px; height: 100%; margin-right: auto;">
+                  <div style="font-size: 75px; text-align: center; vertical-align: middle;">{{str[42]}}</div>
+                </v-card>
+                <v-card elevation="16" id="panel43" text="..." style="width: 100px; height: 100%; margin-right: auto;">
+                  <div style="font-size: 75px; text-align: center; vertical-align: middle;">{{str[43]}}</div>
+                </v-card>
+                <v-card elevation="16" id="panel44" text="..." style="width: 100px; height: 100%; margin-right: auto;">
+                  <div style="font-size: 75px; text-align: center; vertical-align: middle;">{{str[44]}}</div>
+                </v-card>
+              </v-row>
+            </v-col>
+          </v-container>
+          <v-container style="display: flex;">
+            <v-col cols="12" md="5">
+              <v-row row="6" style="height: 100px;">
+                <v-card elevation="16" id="panel20" text="..." style="width: 100px; height: 100%; margin-right: auto;">
+                  <div style="font-size: 75px; text-align: center; vertical-align: middle;">{{str[20]}}</div>
+                </v-card>
+                <v-card elevation="16" id="panel21" text="..." style="width: 100px; height: 100%; margin-right: auto;">
+                  <div style="font-size: 75px; text-align: center; vertical-align: middle;">{{str[21]}}</div>
+                </v-card>
+                <v-card elevation="16" id="panel22" text="..." style="width: 100px; height: 100%; margin-right: auto;">
+                  <div style="font-size: 75px; text-align: center; vertical-align: middle;">{{str[22]}}</div>
+                </v-card>
+                <v-card elevation="16" id="panel23" text="..." style="width: 100px; height: 100%; margin-right: auto;">
+                  <div style="font-size: 75px; text-align: center; vertical-align: middle;">{{str[23]}}</div>
+                </v-card>
+                <v-card elevation="16" id="panel24" text="..." style="width: 100px; height: 100%; margin-right: auto;">
+                  <div style="font-size: 75px; text-align: center; vertical-align: middle;">{{str[24]}}</div>
+                </v-card>
+              </v-row>
+            </v-col>
+            <v-col cols="12" md="5" style="margin-left: auto;">
+              <v-row row="6" style="height: 100px;">
+                <v-card elevation="16" id="panel45" text="..." style="width: 100px; height: 100%; margin-right: auto;">
+                  <div style="font-size: 75px; text-align: center; vertical-align: middle;">{{str[45]}}</div>
+                </v-card>
+                <v-card elevation="16" id="panel46" text="..." style="width: 100px; height: 100%; margin-right: auto;">
+                  <div style="font-size: 75px; text-align: center; vertical-align: middle;">{{str[46]}}</div>
+                </v-card>
+                <v-card elevation="16" id="panel47" text="..." style="width: 100px; height: 100%; margin-right: auto;">
+                  <div style="font-size: 75px; text-align: center; vertical-align: middle;">{{str[47]}}</div>
+                </v-card>
+                <v-card elevation="16" id="panel48" text="..." style="width: 100px; height: 100%; margin-right: auto;">
+                  <div style="font-size: 75px; text-align: center; vertical-align: middle;">{{str[48]}}</div>
+                </v-card>
+                <v-card elevation="16" id="panel49" text="..." style="width: 100px; height: 100%; margin-right: auto;">
+                  <div style="font-size: 75px; text-align: center; vertical-align: middle;">{{str[49]}}</div>
+                </v-card>
+              </v-row>
+            </v-col>
+          </v-container>
+
+        </v-form>
+        <v-form v-model="valid" style="margin-top: 100px;">
+          <v-container>
+            <v-col cols="12" md="2" style="margin: 0 auto; display: flex;">
+              <v-text-field counter="5" maxlength="5" id="answer"
+                onkeypress="if(event.keyCode==13){event.returnValue=false}"></v-text-field>
+              <v-btn v-on:click="clickBtn(count);">
+                回答
+              </v-btn>
+            </v-col>
+          </v-container>
+        </v-form>
+        <div style="display: none;">{{count}}</div>
+      </v-main>
+    </v-app>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+  <script src="./app.js"></script>
+
+  <script>
+    new Vue({
+      el: '#app',
+      vuetify: new Vuetify(),
+      data() {
+        return {
+          str: [],
+          count: 0,
+          clear: false,
+          answer: null,
+          pokemonlists: [
+            {
+              "id": 1,
+              "name": "フシギダネ"
+            },
+            {
+              "id": 2,
+              "name": "フシギソウ"
+            },
+            {
+              "id": 3,
+              "name": "フシギバナ"
+            },
+            {
+              "id": 4,
+              "name": "リザードン"
+            },
+            {
+              "id": 5,
+              "name": "カメックス"
+            },
+            {
+              "id": 6,
+              "name": "キャタピー"
+            },
+            {
+              "id": 7,
+              "name": "トランセル"
+            },
+            {
+              "id": 8,
+              "name": "バタフリー"
+            },
+            {
+              "id": 9,
+              "name": "ピジョット"
+            },
+            {
+              "id": 10,
+              "name": "オニスズメ"
+            },
+            {
+              "id": 11,
+              "name": "オニドリル"
+            },
+            {
+              "id": 12,
+              "name": "アーボック"
+            },
+            {
+              "id": 13,
+              "name": "ピカチュウ"
+            },
+            {
+              "id": 14,
+              "name": "ライチュウ"
+            },
+            {
+              "id": 15,
+              "name": "サンドパン"
+            },
+            {
+              "id": 16,
+              "name": "ニドラン♀"
+            },
+            {
+              "id": 17,
+              "name": "ニドリーナ"
+            },
+            {
+              "id": 18,
+              "name": "ニドクイン"
+            },
+            {
+              "id": 19,
+              "name": "ニドラン♂"
+            },
+            {
+              "id": 20,
+              "name": "ニドリーノ"
+            },
+            {
+              "id": 21,
+              "name": "ニドキング"
+            },
+            {
+              "id": 22,
+              "name": "キュウコン"
+            },
+            {
+              "id": 23,
+              "name": "ゴルバット"
+            },
+            {
+              "id": 24,
+              "name": "ナゾノクサ"
+            },
+            {
+              "id": 25,
+              "name": "クサイハナ"
+            },
+            {
+              "id": 26,
+              "name": "ラフレシア"
+            },
+            {
+              "id": 27,
+              "name": "パラセクト"
+            },
+            {
+              "id": 28,
+              "name": "モルフォン"
+            },
+            {
+              "id": 29,
+              "name": "ダグトリオ"
+            },
+            {
+              "id": 30,
+              "name": "ペルシアン"
+            },
+            {
+              "id": 31,
+              "name": "ゴルダック"
+            },
+            {
+              "id": 32,
+              "name": "オコリザル"
+            },
+            {
+              "id": 33,
+              "name": "ウインディ"
+            },
+            {
+              "id": 34,
+              "name": "ニョロボン"
+            },
+            {
+              "id": 35,
+              "name": "ユンゲラー"
+            },
+            {
+              "id": 36,
+              "name": "フーディン"
+            },
+            {
+              "id": 37,
+              "name": "ワンリキー"
+            },
+            {
+              "id": 38,
+              "name": "ゴーリキー"
+            },
+            {
+              "id": 39,
+              "name": "カイリキー"
+            },
+            {
+              "id": 40,
+              "name": "マダツボミ"
+            },
+            {
+              "id": 41,
+              "name": "ウツボット"
+            },
+            {
+              "id": 42,
+              "name": "メノクラゲ"
+            },
+            {
+              "id": 43,
+              "name": "ドククラゲ"
+            },
+            {
+              "id": 44,
+              "name": "イシツブテ"
+            },
+            {
+              "id": 45,
+              "name": "ゴローニャ"
+            },
+            {
+              "id": 46,
+              "name": "ギャロップ"
+            },
+            {
+              "id": 47,
+              "name": "レアコイル"
+            },
+            {
+              "id": 48,
+              "name": "ドードリオ"
+            },
+            {
+              "id": 49,
+              "name": "ベトベター"
+            },
+            {
+              "id": 50,
+              "name": "ベトベトン"
+            },
+            {
+              "id": 51,
+              "name": "シェルダー"
+            },
+            {
+              "id": 52,
+              "name": "パルシェン"
+            },
+            {
+              "id": 53,
+              "name": "スリーパー"
+            },
+            {
+              "id": 54,
+              "name": "キングラー"
+            },
+            {
+              "id": 55,
+              "name": "ビリリダマ"
+            },
+            {
+              "id": 56,
+              "name": "マルマイン"
+            },
+            {
+              "id": 57,
+              "name": "サワムラー"
+            },
+            {
+              "id": 58,
+              "name": "エビワラー"
+            },
+            {
+              "id": 59,
+              "name": "ベロリンガ"
+            },
+            {
+              "id": 60,
+              "name": "マタドガス"
+            },
+            {
+              "id": 61,
+              "name": "サイホーン"
+            },
+            {
+              "id": 62,
+              "name": "モンジャラ"
+            },
+            {
+              "id": 63,
+              "name": "トサキント"
+            },
+            {
+              "id": 64,
+              "name": "アズマオウ"
+            },
+            {
+              "id": 65,
+              "name": "ヒトデマン"
+            },
+            {
+              "id": 66,
+              "name": "スターミー"
+            },
+            {
+              "id": 67,
+              "name": "バリヤード"
+            },
+            {
+              "id": 68,
+              "name": "ストライク"
+            },
+            {
+              "id": 69,
+              "name": "ルージュラ"
+            },
+            {
+              "id": 70,
+              "name": "ケンタロス"
+            },
+            {
+              "id": 71,
+              "name": "コイキング"
+            },
+            {
+              "id": 72,
+              "name": "ギャラドス"
+            },
+            {
+              "id": 73,
+              "name": "シャワーズ"
+            },
+            {
+              "id": 74,
+              "name": "サンダース"
+            },
+            {
+              "id": 75,
+              "name": "ブースター"
+            },
+            {
+              "id": 76,
+              "name": "オムナイト"
+            },
+            {
+              "id": 77,
+              "name": "オムスター"
+            },
+            {
+              "id": 78,
+              "name": "カブトプス"
+            },
+            {
+              "id": 79,
+              "name": "フリーザー"
+            },
+            {
+              "id": 80,
+              "name": "ファイヤー"
+            },
+            {
+              "id": 81,
+              "name": "ミニリュウ"
+            },
+            {
+              "id": 82,
+              "name": "ハクリュー"
+            },
+            {
+              "id": 83,
+              "name": "カイリュー"
+            },
+            {
+              "id": 84,
+              "name": "ミュウツー"
+            }
+          ]
+        }
+      },
+      mounted: function () {
+        num = this.pokemonlists.length;
+        answerNum = Math.floor(Math.random() * (num));
+        this.answer = this.pokemonlists[answerNum].name;
+      },
+      methods: {
+        clickBtn(count) {
+          let element = document.getElementById('answer');
+          if (element.value.length == 5 && !(this.clear)) {
+            for (var i = count, j = 0; i < count + 5; i++, j++) {
+              this.str[i] = element.value[j];
+            }
+            this.count += 5;
+            this.check_clear(count, element);
+          }
+        },
+        check_clear(count, element) {
+          var answer = this.answer;
+          if (element.value == answer) {
+            alert("正解！");
+            this.check_color(element, answer, count);
+            this.clear = true;
+          } else {
+            if (count == 45) {
+              alert("不正解");
+              alert("正解は " + answer);
+            } else {
+              this.check_color(element, answer, count);
+            }
+          }
+        },
+        check_color(element, answer, count) {
+          var cElement = element.value;
+          var cAnswer = this.answer;
+          var changed = [0, 0, 0, 0, 0];
+          for (var i = 0; i < 5; i++) {
+            if (cElement[i] == cAnswer[i]) {
+              //パネルを緑にする
+              document.getElementById('panel' + (i + count)).style.backgroundColor = 'limegreen';
+              changed.splice(i, 1, 1);
+            }
+          }
+          for (var i = 0; i < 5; i++) {
+            for (var j = 0; j < 5; j++) {
+              if (cElement[i] == cAnswer[j] && changed[j] == 0) {
+                //パネルを黄色にする
+                document.getElementById('panel' + (i + count)).style.backgroundColor = 'yellow';
+                changed.splice(j, 1, 1);
+              }
+            }
+          }
+        }
+      }
+    })
+  </script>
+  <script>
+    $(function () {
+      $('v-text-field').keypress(function (e) {
+        if (e.which == 13) {
+          return false;
+        }
+      });
+    });
+  </script>
 </body>
+
 </html>
